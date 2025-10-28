@@ -1,0 +1,94 @@
+1️⃣ fork() – create a new process
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    int pid = fork();
+    if(pid == 0)
+        printf("Child process\n");
+    else
+        printf("Parent process\n");
+    return 0;
+}
+
+2️⃣ exec() – replace current process with new program
+
+#include <unistd.h>
+
+int main() {
+    execl("/bin/ls", "ls", NULL);
+    return 0;
+}
+
+3️⃣ getpid() – get process ID
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    printf("Process ID: %d\n", getpid());
+    return 0;
+}
+
+
+4️⃣ pipe() – IPC between parent & child
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    int fd[2];
+    pipe(fd);
+
+    if(fork() == 0) {
+        write(fd[1], "Hello", 5);
+    } else {
+        char buffer[10];
+        read(fd[0], buffer, 5);
+        printf("Received: %s\n", buffer);
+    }
+}
+
+
+5️⃣ exit() – terminate a program
+#include <stdlib.h>
+
+int main() {
+    exit(0);
+}
+
+
+6️⃣ open() + close() – file handling
+#include <fcntl.h>
+#include <unistd.h>
+
+int main() {
+    int fd = open("test.txt", O_CREAT | O_WRONLY, 0644);
+    write(fd, "Hi Linux", 8);
+    close(fd);
+    return 0;
+}
+
+
+7️⃣ stat() – get file information
+#include <stdio.h>
+#include <sys/stat.h>
+
+int main() {
+    struct stat s;
+    stat("test.txt", &s);
+    printf("File size: %ld bytes\n", s.st_size);
+    return 0;
+}
+
+
+
+8️⃣ uname() – get system information
+#include <stdio.h>
+#include <sys/utsname.h>
+
+int main() {
+    struct utsname u;
+    uname(&u);
+    printf("System: %s\n", u.sysname);
+    return 0;
+}
