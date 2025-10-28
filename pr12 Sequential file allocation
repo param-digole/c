@@ -1,0 +1,32 @@
+#include <stdio.h>  
+  
+int main() {  
+    int n, start, size, i;  
+  
+    printf("Enter number of files to allocate: ");     
+scanf("%d", &n);  
+  
+    int file_start[n], file_size[n];  
+  
+    for (i = 0; i < n; i++) {         printf("\nFile 
+%d:\n", i + 1);         printf("Enter starting block: 
+");         scanf("%d", &start);         printf("Enter 
+file size (number of blocks): ");         scanf("%d", 
+&size);  
+  
+        file_start[i] = start;         
+file_size[i] = size;  
+    }  
+  
+    printf("\nFile\tStart Block\tEnd Block\tAllocated Blocks\n");     
+    printf("--------------------------------------------------\n");  
+  
+    for (i = 0; i < n; i++) {         printf("F%d\t%d\t\t%d\t\t", i + 1, file_start[i], 
+file_start[i] + file_size[i] - 1);         for (int j = 0; j < file_size[i]; j++) {             
+printf("%d ", file_start[i] + j);  
+        }         
+printf("\n");  
+    }  
+  
+    return 0;  
+}  
