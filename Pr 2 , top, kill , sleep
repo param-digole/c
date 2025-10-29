@@ -1,0 +1,39 @@
+1. top: The top (table of processes) command shows a dynamic, real-time view of running 
+processes and kernel-managed tasks in Linux. The command also provides a system information 
+summary that shows resource utilization, including CPU and memory usage.
+Syntax : top [option]
+
+
+
+
+
+2.ps : ps (process status) command is used to display information about the current running 
+processes on the system. 
+Syntax : ps [options] 
+    ps -f , -a , e
+
+
+kill : kill command which is used to terminate processes manually.
+Syntax : kill [signal]PID
+
+
+4. wait: wait command waits for a process to finish and it returns the termination status.
+Syntax: wait [process_id]
+Eg : wait 1123
+
+
+sleep: Used to execute commands after certain amount of time by sleeping for given seconds
+Syntax: sleep NUMBER[SUFFIX]
+NUMBER represents the time duration for which the command should sleep.
+SUFFIX can be used to specify the unit of time (s for seconds, m for minutes, h for hours, etc.)
+Ex. sleep 30
+
+
+6.nice: This command is used to start a new process with a specific priority, known as the "nice 
+value." A higher nice value lowers the process's priority, while a lower (negative) nice value 
+increases it. Processes with higher priority receive more CPU time.
+How Can You Check a Running Process's Nice Value?
+To check the nice value of a running process, you can make use of the "ps" command with the 
+"-l" option. Open a terminal and execute the following command:
+ps -l <process_id>
+
