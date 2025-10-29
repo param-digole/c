@@ -1,0 +1,43 @@
+1. df
+disk free also known as `df`, which is a powerful utility that provides valuable information on 
+disk space utilization. The df command displays information about file system disk space usage 
+on the mounted file system. This command retrieves the information from `/proc/mounts` or 
+`/etc/mtab`. By default, df command shows disk space in Kilobytes (KB) and uses the SI unit 
+suffixes (e.g, M for megabytes, G for gigabytes) for clarity.
+Syntax:
+df [options] [filesystems]
+
+
+
+2. Free
+free Displays the amount of memory that is currently available and used by the system (both 
+physical and swapped). free command gathers this data by parsing proc/meminfo. By default, 
+the amount of memory is displayed in kilobytes.
+syntax. free
+
+
+3. Vmstat
+vmstat command is used to display virtual memory statistics of the system. This command 
+reports data about the memory, paging, disk, and CPU activities, etc. The first use of this 
+command returns the data averages since the last reboot. Further users return the data based on 
+sampling periods of long delays.
+Syntax : Vmstat
+
+
+
+4./proc/meminfo
+/proc/meminfo This file contains all the data about the memory usage. It provides the current 
+memory usage details rather than old, stored values.
+Syntax:
+cat /proc/meminfo
+
+
+
+5. Htop
+htop is an interactive process viewer. This command is similar to top command except that it 
+allows to scroll vertically and horizontally to allows users to view all processes running on the 
+system, along with their full command line as well as viewing them as a process tree, selecting 
+multiple processes and acting on them all at once.
+To use htop we need to install it in our system. 
+ sudo apt-get install htop
+Now we can use the following command.
